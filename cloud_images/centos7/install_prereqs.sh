@@ -71,7 +71,7 @@ StartLimitInterval=0
 RestartSec=15
 ExecStartPre=-/sbin/ip link del docker0
 ExecStart=
-ExecStart=/usr/bin/docker daemon -H fd:// --graph=/var/lib/docker --storage-driver=overlay
+ExecStart=/usr/bin/docker daemon -H unix:///var/run/docker.sock --graph=/var/lib/docker --storage-driver=overlay
 EOF
 
 echo ">>> Adding group [nogroup]"
